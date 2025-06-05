@@ -25,7 +25,7 @@ const TestimonialSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-brand-orchid">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -44,7 +44,7 @@ const TestimonialSection = () => {
           {/* Testimonial Cards */}
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:scale-105 bg-brand-milk border-none">
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white border-none">
                 <CardContent className="p-8">
                   {/* Quote Icon */}
                   <div className="mb-4">

@@ -4,14 +4,14 @@ import { Calendar, Phone } from "lucide-react";
 
 const CTABanner = () => {
   return (
-    <section id="cta" className="py-20 bg-brand-milk relative overflow-hidden">
+    <section id="cta" className="py-20 relative overflow-hidden" style={{ backgroundColor: 'rgba(247, 132, 59, 0.1)' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 z-10">
         <div className="absolute top-10 left-20 rotate-12">
-          <Calendar size={60} />
+          <Calendar size={60} className="text-brand-orange" />
         </div>
         <div className="absolute bottom-10 right-20 -rotate-12">
-          <Phone size={50} />
+          <Phone size={50} className="text-brand-orange" />
         </div>
       </div>
 
@@ -38,7 +38,7 @@ const CTABanner = () => {
             </Button>
             <Button 
               size="lg" 
-              className="bg-white hover:bg-gray-50 text-brand-orange font-poppins font-semibold text-lg px-8 py-6 rounded-full shadow-xl transition-all duration-300 hover:scale-105 border-2 border-brand-orange"
+              className="bg-brand-milk hover:bg-brand-milk/90 text-brand-orange font-poppins font-semibold text-lg px-8 py-6 rounded-full shadow-xl transition-all duration-300 hover:scale-105 border-2 border-brand-orange"
             >
               <Phone size={20} className="mr-2" />
               Call Us Today

@@ -3,7 +3,7 @@ import { Heart, Users } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-brand-milk">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -28,7 +28,7 @@ const AboutSection = () => {
                   <span className="font-poppins text-gray-700">Crafted with passion and precision</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="bg-brand-milk rounded-full p-3">
+                  <div className="bg-white rounded-full p-3">
                     <Users className="text-gray-700" size={24} />
                   </div>
                   <span className="font-poppins text-gray-700">Personalized service for every celebration</span>

@@ -38,7 +38,7 @@ const PackagesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-brand-milk">
+    <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
