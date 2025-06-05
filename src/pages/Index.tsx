@@ -2,6 +2,7 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import PackagesSection from "@/components/PackagesSection";
+import GallerySection from "@/components/GallerySection";
 import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
@@ -11,10 +12,9 @@ const Index = () => {
   return (
     <div className="min-h-screen font-poppins">
       <HeroSection />
-      <div id="about">
-        <AboutSection />
-      </div>
+      <AboutSection />
       <PackagesSection />
+      <GallerySection />
       <TestimonialSection />
       <FAQSection />
       <CTABanner />

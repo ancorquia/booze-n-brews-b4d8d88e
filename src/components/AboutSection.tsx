@@ -3,7 +3,7 @@ import { Heart, Users } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -41,25 +41,25 @@ const AboutSection = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Andrea preparing cocktails"
+                    src="/lovable-uploads/2b19f752-e375-4726-ac0e-993e207d344c.png" 
+                    alt="Professional bartender in action"
                     className="w-full h-48 object-cover rounded-2xl shadow-lg"
                   />
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Professional bar setup"
+                    src="/lovable-uploads/34122b98-0a16-4724-986b-fd2dad870a00.png" 
+                    alt="Premium spirits and cocktail setup"
                     className="w-full h-32 object-cover rounded-2xl shadow-lg"
                   />
                 </div>
                 <div className="space-y-4 pt-8">
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Dannison serving drinks"
+                    src="/lovable-uploads/36ffe763-8f18-4029-b044-33233b9a6824.png" 
+                    alt="Event guests enjoying cocktails"
                     className="w-full h-32 object-cover rounded-2xl shadow-lg"
                   />
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Happy event guests"
+                    src="/lovable-uploads/66f0b019-2789-4357-b2d7-b885b80a564e.png" 
+                    alt="Professional bar setup with premium spirits"
                     className="w-full h-48 object-cover rounded-2xl shadow-lg"
                   />
                 </div>

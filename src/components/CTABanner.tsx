@@ -1,11 +1,21 @@
+
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone } from "lucide-react";
 
 const CTABanner = () => {
   return (
     <section id="cta" className="py-20 bg-gradient-to-r from-brand-orange to-orange-400 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-20">
+        <img 
+          src="/lovable-uploads/36ffe763-8f18-4029-b044-33233b9a6824.png" 
+          alt="Event celebration"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 z-10">
         <div className="absolute top-10 left-20 rotate-12">
           <Calendar size={60} />
         </div>
@@ -14,7 +24,7 @@ const CTABanner = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-poppins font-medium text-4xl md:text-5xl lg:text-6xl text-white mb-6 uppercase tracking-tight">
             Let's Craft Your

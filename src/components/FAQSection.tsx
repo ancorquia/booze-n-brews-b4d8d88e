@@ -39,8 +39,17 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="faq" className="py-20 bg-brand-milk relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-10">
+        <img 
+          src="/lovable-uploads/80a8193f-318e-4661-878a-d012a4c30b1a.png" 
+          alt="Professional cocktail setup"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -61,7 +70,7 @@ const FAQSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-brand-milk rounded-lg border-none px-6"
+                className="bg-white/90 backdrop-blur-sm rounded-lg border-none px-6 shadow-sm"
               >
                 <AccordionTrigger className="font-poppins font-medium text-lg text-gray-900 hover:text-brand-orange transition-colors py-6">
                   {faq.question}
