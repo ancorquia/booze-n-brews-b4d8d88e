@@ -4,17 +4,7 @@ import { Martini, Coffee } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-brand-milk flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src="/lovable-uploads/9e91a83c-6e03-42d2-8451-a2a4260f1352.png" 
-          alt="Professional bartenders at work"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-brand-milk/80"></div>
-      </div>
-
+    <section id="hero" className="relative min-h-screen bg-brand-milk flex flex-col overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 z-10">
         <div className="absolute top-20 left-10 rotate-12">
@@ -31,7 +21,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 text-center relative z-20">
+      {/* Text Content */}
+      <div className="container mx-auto px-6 text-center relative z-20 flex-1 flex items-center justify-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="font-poppins font-medium text-5xl md:text-7xl lg:text-8xl text-gray-900 mb-6 tracking-tight uppercase animate-fade-in">
@@ -55,6 +46,16 @@ const HeroSection = () => {
             Get a Custom Quote
           </Button>
         </div>
+      </div>
+
+      {/* Hero Image */}
+      <div className="w-full h-96 md:h-[500px] relative">
+        <img 
+          src="/lovable-uploads/9e91a83c-6e03-42d2-8451-a2a4260f1352.png" 
+          alt="Professional bartenders at work"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/10"></div>
       </div>
     </section>
   );

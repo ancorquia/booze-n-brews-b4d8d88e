@@ -54,26 +54,6 @@ const PackagesSection = () => {
             </p>
           </div>
 
-          {/* Hero Images */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/48904e35-6d48-488d-a5f0-40ad47a50b7e.png" 
-                alt="Professional mobile bar setup"
-                className="w-full h-64 object-cover rounded-2xl shadow-lg"
-              />
-              <div className="absolute inset-0 bg-black/20 rounded-2xl"></div>
-            </div>
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/118dc03e-4e65-49c4-a929-8976fd198165.png" 
-                alt="Signature cocktails with branded coasters"
-                className="w-full h-64 object-cover rounded-2xl shadow-lg"
-              />
-              <div className="absolute inset-0 bg-black/20 rounded-2xl"></div>
-            </div>
-          </div>
-
           {/* Package Cards */}
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {packages.map((pkg, index) => (

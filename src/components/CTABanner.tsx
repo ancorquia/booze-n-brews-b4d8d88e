@@ -4,16 +4,7 @@ import { Calendar, Phone } from "lucide-react";
 
 const CTABanner = () => {
   return (
-    <section id="cta" className="py-20 bg-gradient-to-r from-brand-orange to-orange-400 relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-20">
-        <img 
-          src="/lovable-uploads/36ffe763-8f18-4029-b044-33233b9a6824.png" 
-          alt="Event celebration"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
+    <section id="cta" className="py-20 bg-brand-milk relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 z-10">
         <div className="absolute top-10 left-20 rotate-12">
@@ -26,28 +17,28 @@ const CTABanner = () => {
 
       <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-poppins font-medium text-4xl md:text-5xl lg:text-6xl text-white mb-6 uppercase tracking-tight">
+          <h2 className="font-poppins font-medium text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 uppercase tracking-tight">
             Let's Craft Your
             <span className="block">
-              <span className="font-script normal-case text-5xl md:text-6xl lg:text-7xl">Next Event</span>
+              <span className="font-script normal-case text-5xl md:text-6xl lg:text-7xl text-brand-orange">Next Event</span>
             </span>
           </h2>
           
-          <p className="font-poppins text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-poppins text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
             Ready to elevate your celebration? Let's create something unforgettable together.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-white hover:bg-gray-100 text-brand-orange font-poppins font-medium text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="bg-brand-orange hover:bg-brand-orange/90 text-white font-poppins font-medium text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
               <Calendar size={20} className="mr-2" />
               Book Now
             </Button>
             <Button 
               size="lg" 
-              className="bg-brand-milk hover:bg-brand-milk/90 text-brand-orange font-poppins font-semibold text-lg px-8 py-6 rounded-full shadow-xl transition-all duration-300 hover:scale-105 border-2 border-brand-milk"
+              className="bg-white hover:bg-gray-50 text-brand-orange font-poppins font-semibold text-lg px-8 py-6 rounded-full shadow-xl transition-all duration-300 hover:scale-105 border-2 border-brand-orange"
             >
               <Phone size={20} className="mr-2" />
               Call Us Today
