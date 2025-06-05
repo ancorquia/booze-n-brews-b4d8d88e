@@ -5,9 +5,16 @@ const Footer = () => {
   const quickLinks = [
     { name: "Services", href: "#services" },
     { name: "FAQ", href: "#faq" },
-    { name: "Custom Quote", href: "#quote" },
+    { name: "Custom Quote", href: "#cta" },
     { name: "About Us", href: "#about" }
   ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="bg-gray-900 text-white py-16">
@@ -55,12 +62,12 @@ const Footer = () => {
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a 
-                      href={link.href}
-                      className="font-poppins text-gray-300 hover:text-brand-orange transition-colors"
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className="font-poppins text-gray-300 hover:text-brand-orange transition-colors text-left"
                     >
                       {link.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

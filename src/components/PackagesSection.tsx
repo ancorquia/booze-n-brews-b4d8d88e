@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Coffee, Martini, Star } from "lucide-react";
@@ -38,7 +37,7 @@ const PackagesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-brand-milk">
+    <section id="services" className="py-20 bg-brand-milk">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

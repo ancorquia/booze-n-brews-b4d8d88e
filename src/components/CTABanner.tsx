@@ -1,10 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone } from "lucide-react";
 
 const CTABanner = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-brand-orange to-orange-400 relative overflow-hidden">
+    <section id="cta" className="py-20 bg-gradient-to-r from-brand-orange to-orange-400 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-20 rotate-12">
@@ -38,8 +37,7 @@ const CTABanner = () => {
             </Button>
             <Button 
               size="lg" 
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-brand-orange font-poppins font-medium text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105"
+              className="bg-brand-milk hover:bg-brand-milk/90 text-brand-orange font-poppins font-semibold text-lg px-8 py-6 rounded-full shadow-xl transition-all duration-300 hover:scale-105 border-2 border-brand-milk"
             >
               <Phone size={20} className="mr-2" />
               Call Us Today
