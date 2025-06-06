@@ -17,7 +17,7 @@ const HeroSection = () => {
         <img 
           src="/lovable-uploads/9e91a83c-6e03-42d2-8451-a2a4260f1352.png" 
           alt="Professional bartenders at work"
-          className="w-full h-full object-cover absolute inset-0 blur-[2px]"
+          className="w-full h-full object-cover absolute inset-0 blur-sm"
         />
         <div className="absolute inset-0 bg-black/50"></div>
         
@@ -37,31 +37,33 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Text Content - Centered */}
-        <div className="container mx-auto px-6 text-center relative z-20 h-full flex items-center justify-center">
-          <div className="max-w-4xl mx-auto">
-            {/* Main Headline */}
-            <h1 className="font-poppins font-medium text-5xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight uppercase animate-fade-in">
-              Bringing the
-              <span className="block">
-                <span className="font-script text-brand-orange normal-case text-6xl md:text-8xl lg:text-9xl">Party</span>
-              </span>
-              <span className="block">to You</span>
-            </h1>
+        {/* Text Content - Perfectly Centered */}
+        <div className="absolute inset-0 flex items-center justify-center z-20">
+          <div className="container mx-auto px-6 text-center">
+            <div className="max-w-4xl mx-auto">
+              {/* Main Headline */}
+              <h1 className="font-poppins font-medium text-5xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight uppercase animate-fade-in">
+                Bringing the
+                <span className="block">
+                  <span className="font-script text-brand-orange normal-case text-6xl md:text-8xl lg:text-9xl">Party</span>
+                </span>
+                <span className="block">to You</span>
+              </h1>
 
-            {/* Subheadline */}
-            <p className="font-poppins text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Crafting Memories, One Event at a Time.
-            </p>
+              {/* Subheadline */}
+              <p className="font-poppins text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Crafting Memories, One Event at a Time.
+              </p>
 
-            {/* CTA Button */}
-            <Button 
-              onClick={scrollToBooking}
-              size="lg" 
-              className="bg-brand-orange hover:bg-brand-orange/90 text-white font-poppins font-medium text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-            >
-              Get a Custom Quote
-            </Button>
+              {/* CTA Button */}
+              <Button 
+                onClick={scrollToBooking}
+                size="lg" 
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white font-poppins font-medium text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              >
+                Get a Custom Quote
+              </Button>
+            </div>
           </div>
         </div>
       </div>

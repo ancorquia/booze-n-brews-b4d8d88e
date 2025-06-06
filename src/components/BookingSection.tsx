@@ -8,8 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { Phone } from "lucide-react";
 
-const BookingForm = () => {
+const BookingSection = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     fullName: "",
@@ -61,15 +62,15 @@ const BookingForm = () => {
   };
 
   return (
-    <section id="booking" className="py-24 bg-brand-milk">
+    <section id="booking" className="py-24" style={{ backgroundColor: '#f1ebdf' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="font-poppins font-medium text-4xl md:text-5xl text-gray-900 mb-4 uppercase tracking-tight">
-              Let's Craft Your
+            <h2 className="font-poppins font-medium text-4xl md:text-5xl text-gray-900 mb-6 uppercase tracking-tight">
+              Ready to Make Your
               <span className="block">
-                <span className="font-script text-brand-orange normal-case text-5xl md:text-6xl">Event</span>
+                <span className="font-script text-brand-orange normal-case text-5xl md:text-6xl">Event Unforgettable?</span>
               </span>
             </h2>
             <p className="font-poppins text-lg text-gray-700 max-w-2xl mx-auto">
@@ -78,7 +79,7 @@ const BookingForm = () => {
           </div>
 
           {/* Booking Form */}
-          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 space-y-6">
+          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 space-y-6 mb-8">
             <div className="grid md:grid-cols-2 gap-6">
               {/* Full Name */}
               <div className="space-y-2">
@@ -161,7 +162,7 @@ const BookingForm = () => {
               {/* Guest Count */}
               <div className="space-y-2">
                 <Label htmlFor="guestCount" className="font-poppins font-medium text-gray-900">
-                  Estimated Guest Count
+                  Guest Count
                 </Label>
                 <Input
                   id="guestCount"
@@ -177,7 +178,7 @@ const BookingForm = () => {
             {/* Event Type */}
             <div className="space-y-2">
               <Label htmlFor="eventType" className="font-poppins font-medium text-gray-900">
-                Type of Event
+                Event Type
               </Label>
               <Select value={formData.eventType} onValueChange={(value) => handleInputChange("eventType", value)}>
                 <SelectTrigger className="font-poppins">
@@ -218,10 +219,28 @@ const BookingForm = () => {
               </Button>
             </div>
           </form>
+
+          {/* Rush Inquiries CTA */}
+          <div className="text-center">
+            <p className="font-poppins text-lg text-gray-700 mb-4">
+              Need a quote ASAP? We accept rush events.
+            </p>
+            <Button 
+              variant="outline"
+              size="lg" 
+              className="border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white font-poppins font-medium text-lg px-8 py-4 rounded-full transition-all duration-300"
+              asChild
+            >
+              <a href="tel:+1-403-555-0123" className="flex items-center gap-2">
+                <Phone size={20} />
+                Call Us Today
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default BookingForm;
+export default BookingSection;

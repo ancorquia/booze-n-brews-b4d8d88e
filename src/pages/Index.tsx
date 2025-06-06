@@ -4,8 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import PackagesSection from "@/components/PackagesSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
-import CTABanner from "@/components/CTABanner";
-import BookingForm from "@/components/BookingForm";
+import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,8 +15,7 @@ const Index = () => {
       <PackagesSection />
       <TestimonialSection />
       <FAQSection />
-      <CTABanner />
-      <BookingForm />
+      <BookingSection />
       <Footer />
     </div>
   );
