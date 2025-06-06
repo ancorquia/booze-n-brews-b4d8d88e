@@ -5,12 +5,12 @@ import { Martini, Coffee } from "lucide-react";
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Hero Image with Dark Overlay */}
+      {/* Hero Image with Blur Effect and Dark Overlay */}
       <div className="relative w-full min-h-screen">
         <img 
           src="/lovable-uploads/9e91a83c-6e03-42d2-8451-a2a4260f1352.png" 
           alt="Professional bartenders at work"
-          className="w-full h-full object-cover absolute inset-0"
+          className="w-full h-full object-cover absolute inset-0 blur-sm"
         />
         <div className="absolute inset-0 bg-black/50"></div>
         
@@ -30,8 +30,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Text Content */}
-        <div className="container mx-auto px-6 text-center relative z-20 flex-1 flex items-center justify-center">
+        {/* Text Content - Centered */}
+        <div className="container mx-auto px-6 text-center relative z-20 h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto">
             {/* Main Headline */}
             <h1 className="font-poppins font-medium text-5xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight uppercase animate-fade-in">
