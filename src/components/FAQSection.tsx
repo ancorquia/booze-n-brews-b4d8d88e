@@ -1,4 +1,3 @@
-
 import {
   Accordion,
   AccordionContent,
@@ -39,7 +38,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 pt-32 bg-brand-milk">
+    <section id="faq" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -61,7 +60,7 @@ const FAQSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-white/90 backdrop-blur-sm rounded-lg border-none px-6 shadow-sm"
+                className="bg-brand-milk/50 backdrop-blur-sm rounded-lg border-none px-6 shadow-sm"
               >
                 <AccordionTrigger className="font-poppins font-medium text-lg text-gray-900 hover:text-brand-orange transition-colors py-6">
                   {faq.question}

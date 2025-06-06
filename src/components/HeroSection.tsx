@@ -3,14 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Martini, Coffee } from "lucide-react";
 
 const HeroSection = () => {
+  const scrollToBooking = () => {
+    const element = document.querySelector('#booking');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Hero Image with Blur Effect and Dark Overlay */}
+      {/* Hero Image with Soft Blur and Dark Overlay */}
       <div className="relative w-full min-h-screen">
         <img 
           src="/lovable-uploads/9e91a83c-6e03-42d2-8451-a2a4260f1352.png" 
           alt="Professional bartenders at work"
-          className="w-full h-full object-cover absolute inset-0 blur-sm"
+          className="w-full h-full object-cover absolute inset-0 blur-[2px]"
         />
         <div className="absolute inset-0 bg-black/50"></div>
         
@@ -49,6 +56,7 @@ const HeroSection = () => {
 
             {/* CTA Button */}
             <Button 
+              onClick={scrollToBooking}
               size="lg" 
               className="bg-brand-orange hover:bg-brand-orange/90 text-white font-poppins font-medium text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >

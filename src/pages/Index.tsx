@@ -5,6 +5,7 @@ import PackagesSection from "@/components/PackagesSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
+import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
       <TestimonialSection />
       <FAQSection />
       <CTABanner />
+      <BookingForm />
       <Footer />
     </div>
   );
