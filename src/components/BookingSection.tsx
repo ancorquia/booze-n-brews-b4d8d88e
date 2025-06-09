@@ -23,36 +23,64 @@ const BookingSection = () => {
     additionalDetails: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.fullName || !formData.email || !formData.eventDate || !formData.eventLocation) {
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  // Basic validation
+  if (!formData.fullName || !formData.email || !formData.eventDate || !formData.eventLocation) {
+    toast({
+      title: "Required fields missing",
+      description: "Please fill in all required fields.",
+      variant: "destructive"
+    });
+    return;
+  }
+
+  try {
+    const response = await fetch("/api/submit-quote", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
       toast({
-        title: "Required fields missing",
-        description: "Please fill in all required fields.",
+        title: "Quote request submitted!",
+        description: result.message || "We'll get back to you within 24 hours with a custom quote.",
+      });
+
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        eventDate: "",
+        eventLocation: "",
+        guestCount: "",
+        eventType: "",
+        additionalDetails: ""
+      });
+    } else {
+      toast({
+        title: "Submission failed",
+        description: result.message || "Something went wrong. Please try again.",
         variant: "destructive"
       });
-      return;
     }
-
+  } catch (error) {
+    console.error("Error submitting form:", error);
     toast({
-      title: "Quote request submitted!",
-      description: "We'll get back to you within 24 hours with a custom quote.",
+      title: "Submission failed",
+      description: "Something went wrong. Please try again.",
+      variant: "destructive"
     });
+  }
+};
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      eventDate: "",
-      eventLocation: "",
-      guestCount: "",
-      eventType: "",
-      additionalDetails: ""
-    });
-  };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
