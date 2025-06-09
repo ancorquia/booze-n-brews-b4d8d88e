@@ -37,21 +37,15 @@ const BookingSection = () => {
   }, []);
 
   return (
-    <section 
-      id="booking" 
-      style={{ 
-        backgroundColor: '#f1ebdf', 
-        padding: '4rem 1rem' 
-      }}
-    >
-      <div style={{ 
-        maxWidth: '880px', 
-        margin: '0 auto', 
-        background: 'white', 
-        padding: '2.5rem 2rem 3rem', 
-        borderRadius: '24px', 
-        boxShadow: '0 10px 28px rgba(0,0,0,0.07)' 
-      }}>
+    <>
+      {/* Elegant Headline Section */}
+      <section 
+        id="booking"
+        style={{ 
+          backgroundColor: '#f1ebdf', 
+          padding: '4rem 1rem 1rem' 
+        }}
+      >
         <h2 style={{ 
           textAlign: 'center', 
           fontFamily: "'Poppins', sans-serif", 
@@ -79,26 +73,52 @@ const BookingSection = () => {
         }}>
           Tell us a few details and we'll get back to you with a custom quote.
         </p>
-        <div style={{ height: '900px', overflow: 'auto' }}>
-          <iframe 
-            data-tally-src="https://tally.so/embed/m6zve5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy" 
-            width="100%" 
-            height="1000" 
-            frameBorder="0" 
-            marginHeight={0} 
-            marginWidth={0}
-            title="Request a Quote" 
-            style={{ 
-              border: 'none', 
-              borderRadius: '16px' 
-            }}
-          />
-        </div>
-      </div>
+      </section>
 
-      {/* Call Us Button */}
-      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+      {/* Form Container Section */}
+      <section style={{ 
+        backgroundColor: '#f1ebdf', 
+        padding: '0 1rem 4rem' 
+      }}>
+        <div style={{ 
+          maxWidth: '880px', 
+          margin: '0 auto', 
+          background: 'white', 
+          padding: '2.5rem 2rem 3rem', 
+          borderRadius: '24px', 
+          boxShadow: '0 10px 28px rgba(0,0,0,0.07)' 
+        }}>
+          <div style={{ 
+            width: '100%', 
+            overflowX: 'hidden', 
+            overflowY: 'auto', 
+            maxHeight: '950px' 
+          }}>
+            <iframe 
+              data-tally-src="https://tally.so/embed/m6zve5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy" 
+              width="100%" 
+              height="1000" 
+              frameBorder="0" 
+              marginHeight={0} 
+              marginWidth={0}
+              title="Request a Quote" 
+              style={{ 
+                border: 'none', 
+                borderRadius: '16px', 
+                width: '100%' 
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Call Us Today CTA */}
+      <section style={{ 
+        backgroundColor: '#f1ebdf', 
+        paddingTop: '2rem', 
+        textAlign: 'center' 
+      }}>
         <p style={{ 
           fontFamily: "'Poppins', sans-serif", 
           fontSize: '1rem', 
@@ -115,13 +135,14 @@ const BookingSection = () => {
             fontFamily: "'Poppins', sans-serif", 
             borderRadius: '999px', 
             textDecoration: 'none', 
-            display: 'inline-block' 
+            display: 'inline-block', 
+            marginTop: '0.5rem' 
           }}
         >
           📞 Call Us Today
         </a>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
