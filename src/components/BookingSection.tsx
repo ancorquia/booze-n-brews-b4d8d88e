@@ -19,33 +19,33 @@ const BookingSection = () => {
         </p>
       </div>
 
-     <form
+  <form
   id="booking-form"
   method="POST"
   className="bg-white max-w-4xl mx-auto rounded-2xl shadow-md px-6 py-8 grid grid-cols-1 md:grid-cols-2 gap-6"
 >
   {/* Full Name */}
   <div>
-    <label className="form-label">Full Name *</label>
-    <input name="Full Name" required className="form-input" />
+    <label htmlFor="full-name" className="form-label">Full Name *</label>
+    <input id="full-name" name="Full Name" required className="form-input" />
   </div>
 
   {/* Email */}
   <div>
-    <label className="form-label">Email *</label>
-    <input name="Email" type="email" required className="form-input" />
+    <label htmlFor="email" className="form-label">Email *</label>
+    <input id="email" name="Email" type="email" required className="form-input" />
   </div>
 
   {/* Phone Number */}
   <div>
-    <label className="form-label">Phone Number</label>
-    <input name="Phone Number" className="form-input" />
+    <label htmlFor="phone" className="form-label">Phone Number</label>
+    <input id="phone" name="Phone Number" className="form-input" />
   </div>
 
   {/* Event Type */}
   <div>
-    <label className="form-label">Event Type</label>
-    <select name="Event Type" className="form-input">
+    <label htmlFor="event-type" className="form-label">Event Type</label>
+    <select id="event-type" name="Event Type" className="form-input">
       <option value="">Select Event Type</option>
       <option>Wedding</option>
       <option>Corporate</option>
@@ -57,32 +57,32 @@ const BookingSection = () => {
 
   {/* Event Date */}
   <div>
-    <label className="form-label">Event Date *</label>
-    <input name="Event Date" type="date" required className="form-input" />
+    <label htmlFor="event-date" className="form-label">Event Date *</label>
+    <input id="event-date" name="Event Date" type="date" required className="form-input" />
   </div>
 
   {/* Event Time Start */}
   <div>
-    <label className="form-label">Event Time Start</label>
-    <input name="Event Time Start" className="form-input" />
+    <label htmlFor="event-time" className="form-label">Event Time Start</label>
+    <input id="event-time" name="Event Time Start" className="form-input" />
   </div>
 
   {/* Event Duration */}
   <div>
-    <label className="form-label">Event Duration (e.g., 2, 4, 6 hrs)</label>
-    <input name="Event Duration" className="form-input" />
+    <label htmlFor="duration" className="form-label">Event Duration (e.g., 2, 4, 6 hrs)</label>
+    <input id="duration" name="Event Duration" className="form-input" />
   </div>
 
   {/* Venue Address */}
   <div>
-    <label className="form-label">Event Venue Address</label>
-    <input name="Event Venue Address" className="form-input" />
+    <label htmlFor="venue" className="form-label">Event Venue Address</label>
+    <input id="venue" name="Event Venue Address" className="form-input" />
   </div>
 
   {/* Venue Type */}
   <div>
-    <label className="form-label">Venue Type</label>
-    <select name="Venue Type" className="form-input">
+    <label htmlFor="venue-type" className="form-label">Venue Type</label>
+    <select id="venue-type" name="Venue Type" className="form-input">
       <option value="">Select Venue Type</option>
       <option>Private Residence</option>
       <option>Outdoors (Garden, Parks, etc.)</option>
@@ -96,14 +96,14 @@ const BookingSection = () => {
 
   {/* Guest Count */}
   <div>
-    <label className="form-label">Estimated Guest Count</label>
-    <input name="Estimated Guest Count" className="form-input" />
+    <label htmlFor="guest-count" className="form-label">Estimated Guest Count</label>
+    <input id="guest-count" name="Estimated Guest Count" className="form-input" />
   </div>
 
   {/* Package */}
   <div>
-    <label className="form-label">Choose Your Package</label>
-    <select name="Package" className="form-input">
+    <label htmlFor="package" className="form-label">Choose Your Package</label>
+    <select id="package" name="Package" className="form-input">
       <option value="">Choose Package</option>
       <option>Basic Package</option>
       <option>Deluxe Package</option>
@@ -112,18 +112,18 @@ const BookingSection = () => {
 
   {/* Service */}
   <div>
-    <label className="form-label">Choose Your Service</label>
-    <select name="Service Type" className="form-input">
+    <label htmlFor="service" className="form-label">Choose Your Service</label>
+    <select id="service" name="Service Type" className="form-input">
       <option value="">Choose Service</option>
       <option>Complete Bar Service (Recommended)</option>
       <option>Bartender Only</option>
     </select>
   </div>
 
-  {/* Preferred Contact Mode */}
+  {/* Contact Mode */}
   <div className="md:col-span-2">
-    <label className="form-label">Preferred Mode of Contact</label>
-    <select name="Preferred Mode of Contact" className="form-input">
+    <label htmlFor="contact-mode" className="form-label">Preferred Mode of Contact</label>
+    <select id="contact-mode" name="Preferred Mode of Contact" className="form-input">
       <option value="">Select Preference</option>
       <option>Email Only</option>
       <option>Virtual Meeting</option>
@@ -133,8 +133,9 @@ const BookingSection = () => {
 
   {/* Special Requests */}
   <div className="md:col-span-2">
-    <label className="form-label">Any Extras or Special Requests?</label>
+    <label htmlFor="requests" className="form-label">Any Extras or Special Requests?</label>
     <textarea
+      id="requests"
       name="Special Requests"
       className="form-input"
       rows={4}
@@ -152,6 +153,7 @@ const BookingSection = () => {
     </button>
   </div>
 </form>
+
 
 
       <p className="text-center mt-8 font-poppins text-gray-700">
