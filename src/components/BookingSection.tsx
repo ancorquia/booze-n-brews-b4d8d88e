@@ -75,21 +75,24 @@ const BookingSection = () => {
             overflowY: 'auto', 
             maxHeight: '950px' 
           }}>
-            <iframe 
-              data-tally-src="https://tally.so/embed/m6zve5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy" 
-              width="100%" 
-              height="1000" 
-              frameBorder="0" 
-              marginHeight={0} 
-              marginWidth={0}
-              title="Request a Quote" 
-              style={{ 
-                border: 'none', 
-                borderRadius: '16px', 
-                width: '100%' 
-              }}
-            />
+         <section className="bg-[#f1ebdf] px-4 pb-16">
+  <div className="max-w-[880px] mx-auto bg-white p-10 rounded-3xl shadow-md">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSeLi5nkNDPJabndiE_k3ucd4sYzQSMYOBbA2r4zHcBCW2e23A/viewform?embedded=true"
+      width="100%"
+      height="1500"
+      frameBorder="0"
+      marginHeight={0}
+      marginWidth={0}
+      title="Booze N’ Brews Quote Form"
+      className="w-full rounded-xl"
+      style={{ border: 'none' }}
+    >
+      Loading…
+    </iframe>
+  </div>
+</section>
+
           </div>
         </div>
       </section>
