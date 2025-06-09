@@ -19,57 +19,140 @@ const BookingSection = () => {
         </p>
       </div>
 
-      <form
-        id="booking-form"
-        method="POST"
-        className="bg-white max-w-4xl mx-auto rounded-2xl shadow-md px-6 py-8 grid grid-cols-1 md:grid-cols-2 gap-6"
-      >
-        <input name="Full Name" placeholder="Full Name *" className="form-input" required />
-        <input name="Email" type="email" placeholder="Email *" className="form-input" required />
-        <input name="Phone Number" placeholder="Phone Number" className="form-input" />
-        <input name="Event Type" placeholder="Event Type (Birthday, Wedding, etc.)" className="form-input" />
-        <input name="Event Date" type="date" placeholder="Event Date *" className="form-input" required />
-        <input name="Event Time Start" placeholder="Event Time Start" className="form-input" />
-        <input name="Event Duration" placeholder="Event Duration (e.g., 2, 4, 6 hrs)" className="form-input" />
-        <input name="Event Venue Address" placeholder="Venue Address" className="form-input" />
-        <input name="Venue Type" placeholder="Venue Type" className="form-input" />
-        <input name="Estimated Guest Count" placeholder="Estimated Guest Count" className="form-input" />
+     <form
+  id="booking-form"
+  method="POST"
+  className="bg-white max-w-4xl mx-auto rounded-2xl shadow-md px-6 py-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+>
+  {/* Full Name */}
+  <div>
+    <label className="form-label">Full Name *</label>
+    <input name="Full Name" required className="form-input" />
+  </div>
 
-        <select name="Package" className="form-input">
-          <option value="">Choose your Package</option>
-          <option value="Basic Package">Basic Package</option>
-          <option value="Deluxe Package">Deluxe Package</option>
-        </select>
+  {/* Email */}
+  <div>
+    <label className="form-label">Email *</label>
+    <input name="Email" type="email" required className="form-input" />
+  </div>
 
-        <select name="Service Type" className="form-input">
-          <option value="">Choose your Service</option>
-          <option value="Complete Bar Service">Complete Bar Service (Recommended)</option>
-          <option value="Bartender Only">Bartender Only</option>
-        </select>
+  {/* Phone Number */}
+  <div>
+    <label className="form-label">Phone Number</label>
+    <input name="Phone Number" className="form-input" />
+  </div>
 
-        <select name="Preferred Mode of Contact" className="form-input md:col-span-2">
-          <option value="">Preferred Mode of Contact</option>
-          <option value="Email Only">Email only</option>
-          <option value="Virtual Meeting">Virtual Meeting</option>
-          <option value="Email and Phone Call">Email and Phone Call</option>
-        </select>
+  {/* Event Type */}
+  <div>
+    <label className="form-label">Event Type</label>
+    <select name="Event Type" className="form-input">
+      <option value="">Select Event Type</option>
+      <option>Wedding</option>
+      <option>Corporate</option>
+      <option>Private Party</option>
+      <option>Birthday Party</option>
+      <option>Other</option>
+    </select>
+  </div>
 
-        <textarea
-          name="Special Requests"
-          placeholder="Any extras or special requests? (e.g., theme, cocktails, kids)"
-          className="form-input md:col-span-2"
-          rows={4}
-        ></textarea>
+  {/* Event Date */}
+  <div>
+    <label className="form-label">Event Date *</label>
+    <input name="Event Date" type="date" required className="form-input" />
+  </div>
 
-        <div className="md:col-span-2 text-center">
-          <button
-            type="submit"
-            className="bg-[#f7843b] hover:bg-[#e87428] text-white font-medium rounded-full px-8 py-3 text-lg font-poppins transition"
-          >
-            Get My Quote
-          </button>
-        </div>
-      </form>
+  {/* Event Time Start */}
+  <div>
+    <label className="form-label">Event Time Start</label>
+    <input name="Event Time Start" className="form-input" />
+  </div>
+
+  {/* Event Duration */}
+  <div>
+    <label className="form-label">Event Duration (e.g., 2, 4, 6 hrs)</label>
+    <input name="Event Duration" className="form-input" />
+  </div>
+
+  {/* Venue Address */}
+  <div>
+    <label className="form-label">Event Venue Address</label>
+    <input name="Event Venue Address" className="form-input" />
+  </div>
+
+  {/* Venue Type */}
+  <div>
+    <label className="form-label">Venue Type</label>
+    <select name="Venue Type" className="form-input">
+      <option value="">Select Venue Type</option>
+      <option>Private Residence</option>
+      <option>Outdoors (Garden, Parks, etc.)</option>
+      <option>Community Center</option>
+      <option>Club House</option>
+      <option>Conference Room</option>
+      <option>Events Place</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  {/* Guest Count */}
+  <div>
+    <label className="form-label">Estimated Guest Count</label>
+    <input name="Estimated Guest Count" className="form-input" />
+  </div>
+
+  {/* Package */}
+  <div>
+    <label className="form-label">Choose Your Package</label>
+    <select name="Package" className="form-input">
+      <option value="">Choose Package</option>
+      <option>Basic Package</option>
+      <option>Deluxe Package</option>
+    </select>
+  </div>
+
+  {/* Service */}
+  <div>
+    <label className="form-label">Choose Your Service</label>
+    <select name="Service Type" className="form-input">
+      <option value="">Choose Service</option>
+      <option>Complete Bar Service (Recommended)</option>
+      <option>Bartender Only</option>
+    </select>
+  </div>
+
+  {/* Preferred Contact Mode */}
+  <div className="md:col-span-2">
+    <label className="form-label">Preferred Mode of Contact</label>
+    <select name="Preferred Mode of Contact" className="form-input">
+      <option value="">Select Preference</option>
+      <option>Email Only</option>
+      <option>Virtual Meeting</option>
+      <option>Email and Phone Call</option>
+    </select>
+  </div>
+
+  {/* Special Requests */}
+  <div className="md:col-span-2">
+    <label className="form-label">Any Extras or Special Requests?</label>
+    <textarea
+      name="Special Requests"
+      className="form-input"
+      rows={4}
+      placeholder="Event theme, kids, cocktails, etc."
+    ></textarea>
+  </div>
+
+  {/* Submit Button */}
+  <div className="md:col-span-2 text-center">
+    <button
+      type="submit"
+      className="bg-[#f7843b] hover:bg-[#e87428] text-white font-medium rounded-full px-8 py-3 text-lg font-poppins transition"
+    >
+      Get My Quote
+    </button>
+  </div>
+</form>
+
 
       <p className="text-center mt-8 font-poppins text-gray-700">
         Need a quote ASAP? We accept rush events.
