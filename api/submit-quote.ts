@@ -20,9 +20,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       additionalDetails
     } = req.body;
 
-    await resend.emails.send({
-      from: 'hello@boozenbrews.ca', // ✅ must match verified domain in Resend
-      to: ['andreanicoleorquia@gmail.com'], // ✅ where you want to receive it
+    // Basic required field check (optional but helpful)
+    if (!fullName || !email || !eventDate || !eventLocation) {
+      return res.status(400).json({ message: 'Missing required fields' });
+    }
+
+    const response = await resend.emails.send({
+      from: 'hello@boozenbrews.ca',
+      to: ['andreanicoleorquia@gmail.com'],
       subject: `New Quote Request from ${fullName}`,
       html: `
         <h2>New Quote Request</h2>
@@ -37,10 +42,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `,
     });
 
+    // Optional: Check if Resend responded with an error
+    if (response.error) {
+      console.error("Resend send error:", response.error);
+      return res.status(500).json({ message: 'Failed to send email', error: response.error.message });
+    }
+
     return res.status(200).json({ message: 'Quote received and email sent!' });
 
-  } catch (error) {
-    console.error("Email send error:", error);
-    return res.status(500).json({ message: 'Internal Server Error' });
+  } catch (error: any) {
+    console.error("Email send error:", error?.message || error);
+    return res.status(500).json({ message: 'Internal Server Error', error: error?.message || String(error) });
   }
 }
