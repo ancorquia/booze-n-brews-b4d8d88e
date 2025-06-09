@@ -2,12 +2,10 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
-  }
-
+export async function POST(request: Request): Promise<Response> {
   try {
+    const body = await request.json();
+
     const {
       fullName,
       email,
@@ -17,7 +15,7 @@ export default async function handler(req, res) {
       guestCount,
       eventType,
       additionalDetails
-    } = req.body;
+    } = body;
 
     await resend.emails.send({
       from: 'hello@boozenbrews.ca',
@@ -36,10 +34,16 @@ export default async function handler(req, res) {
       `,
     });
 
-    return res.status(200).json({ message: 'Quote received and email sent!' });
+    return new Response(JSON.stringify({ message: 'Quote received and email sent!' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
 
   } catch (error) {
     console.error("Email send error:", error);
-    return res.status(500).json({ message: 'Internal Server Error' });
+    return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
