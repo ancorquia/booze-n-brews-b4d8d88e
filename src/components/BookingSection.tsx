@@ -39,41 +39,22 @@ const BookingSection = () => {
   return (
     <>
       {/* Elegant Headline Section */}
-      <section 
-        id="booking"
-        style={{ 
-          backgroundColor: '#f1ebdf', 
-          padding: '4rem 1rem 1rem' 
-        }}
-      >
-        <h2 style={{ 
-          textAlign: 'center', 
-          fontFamily: "'Poppins', sans-serif", 
-          fontSize: '2rem', 
-          color: '#1a1a1a', 
-          marginBottom: '0.25rem' 
-        }}>
-          READY TO MAKE YOUR
-        </h2>
-        <h3 style={{ 
-          textAlign: 'center', 
-          fontFamily: "'Barista Script', cursive", 
-          fontSize: '2rem', 
-          color: '#f7843b', 
-          marginTop: '0' 
-        }}>
+      <section id="booking" className="bg-[#f1ebdf] px-4 pt-16 pb-4">
+  <div className="text-center mb-16">
+    <h2 className="font-poppins font-medium text-4xl md:text-5xl text-gray-900 mb-6 uppercase tracking-tight">
+      Ready to Make Your
+      <span className="block">
+        <span className="font-script text-brand-orange normal-case text-5xl md:text-6xl">
           Event Unforgettable?
-        </h3>
-        <p style={{ 
-          textAlign: 'center', 
-          fontFamily: "'Poppins', sans-serif", 
-          fontSize: '1rem', 
-          color: '#333', 
-          marginBottom: '2rem' 
-        }}>
-          Tell us a few details and we'll get back to you with a custom quote.
-        </p>
-      </section>
+        </span>
+      </span>
+    </h2>
+    <p className="font-poppins text-lg text-gray-700 max-w-2xl mx-auto">
+      Tell us a few details and we'll get back to you with a custom quote.
+    </p>
+  </div>
+</section>
+
 
       {/* Form Container Section */}
       <section style={{ 
