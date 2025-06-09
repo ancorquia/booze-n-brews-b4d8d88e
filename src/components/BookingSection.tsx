@@ -42,10 +42,13 @@ const BookingSection = () => {
 
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbzZbI99_DCfgAkFyaVoOAGR1kyJS3sCOz1HhakmMWeZWpaicY4MoyPTHZ9aBsIOAbFZwA/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(formData)
+});
+
 
       const result = await response.json();
 
