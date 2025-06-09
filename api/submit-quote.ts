@@ -1,14 +1,18 @@
 import { Resend } from 'resend';
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
+export default async function handler(request: Request) {
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ message: 'Method Not Allowed' }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
   try {
+    const body = await request.json();
+
     const {
       fullName,
       email,
@@ -18,11 +22,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       guestCount,
       eventType,
       additionalDetails
-    } = req.body;
+    } = body;
 
     // Basic required field check (optional but helpful)
     if (!fullName || !email || !eventDate || !eventLocation) {
-      return res.status(400).json({ message: 'Missing required fields' });
+      return new Response(JSON.stringify({ message: 'Missing required fields' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     const response = await resend.emails.send({
@@ -45,13 +52,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Optional: Check if Resend responded with an error
     if (response.error) {
       console.error("Resend send error:", response.error);
-      return res.status(500).json({ message: 'Failed to send email', error: response.error.message });
+      return new Response(JSON.stringify({ message: 'Failed to send email', error: response.error.message }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
-    return res.status(200).json({ message: 'Quote received and email sent!' });
+    return new Response(JSON.stringify({ message: 'Quote received and email sent!' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
 
   } catch (error: any) {
     console.error("Email send error:", error?.message || error);
-    return res.status(500).json({ message: 'Internal Server Error', error: error?.message || String(error) });
+    return new Response(JSON.stringify({ message: 'Internal Server Error', error: error?.message || String(error) }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 }
