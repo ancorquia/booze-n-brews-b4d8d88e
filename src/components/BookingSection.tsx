@@ -1,46 +1,5 @@
-
-"use client";
-
-import { useEffect } from "react";
-
-const BookingSection = () => {
-  useEffect(() => {
-    // Load Tally embed script
-    const loadTallyScript = () => {
-      if (typeof window !== 'undefined') {
-        const d = document;
-        const w = "https://tally.so/widgets/embed.js";
-        
-        const v = function () {
-          if (typeof (window as any).Tally !== 'undefined') {
-            (window as any).Tally.loadEmbeds();
-          } else {
-            d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e: any) {
-              e.src = e.dataset.tallySrc;
-            });
-          }
-        };
-
-        if (typeof (window as any).Tally !== 'undefined') {
-          v();
-        } else if (d.querySelector(`script[src="${w}"]`) == null) {
-          const s = d.createElement("script");
-          s.src = w;
-          s.onload = v;
-          s.onerror = v;
-          d.body.appendChild(s);
-        }
-      }
-    };
-
-    loadTallyScript();
-  }, []);
-
-  return (
-    <>
-      {/* Elegant Headline Section */}
-      <section id="booking" className="bg-[#f1ebdf] px-4 pt-16 pb-4">
-  <div className="text-center mb-16">
+<section id="booking" className="bg-[#f1ebdf] px-4 pt-16 pb-8">
+  <div className="text-center mb-10">
     <h2 className="font-poppins font-medium text-4xl md:text-5xl text-gray-900 mb-6 uppercase tracking-tight">
       Ready to Make Your
       <span className="block">
@@ -53,81 +12,68 @@ const BookingSection = () => {
       Tell us a few details and we'll get back to you with a custom quote.
     </p>
   </div>
-</section>
 
+  <form
+    id="booking-form"
+    method="POST"
+    className="bg-white max-w-4xl mx-auto rounded-2xl shadow-md px-6 py-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+  >
+    <input name="Full Name" placeholder="Full Name *" className="form-input" required />
+    <input name="Email" type="email" placeholder="Email *" className="form-input" required />
+    <input name="Phone Number" placeholder="Phone Number" className="form-input" />
+    <input name="Event Type" placeholder="Event Type (Birthday, Wedding, etc.)" className="form-input" />
+    <input name="Event Date" type="date" placeholder="Event Date *" className="form-input" required />
+    <input name="Event Time Start" placeholder="Event Time Start" className="form-input" />
+    <input name="Event Duration" placeholder="Event Duration (e.g., 2, 4, 6 hrs)" className="form-input" />
+    <input name="Event Venue Address" placeholder="Venue Address" className="form-input" />
+    <input name="Venue Type" placeholder="Venue Type" className="form-input" />
+    <input name="Estimated Guest Count" placeholder="Estimated Guest Count" className="form-input" />
 
-      {/* Form Container Section */}
-      <section style={{ 
-        backgroundColor: '#f1ebdf', 
-        padding: '0 1rem 4rem' 
-      }}>
-        <div style={{ 
-          maxWidth: '880px', 
-          margin: '0 auto', 
-          background: 'white', 
-          padding: '2.5rem 2rem 3rem', 
-          borderRadius: '24px', 
-          boxShadow: '0 10px 28px rgba(0,0,0,0.07)' 
-        }}>
-          <div style={{ 
-            width: '100%', 
-            overflowX: 'hidden', 
-            overflowY: 'auto', 
-            maxHeight: '950px' 
-          }}>
-         <section className="bg-[#f1ebdf] px-4 pb-16">
-  <div className="max-w-[880px] mx-auto bg-white p-10 rounded-3xl shadow-md">
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSeLi5nkNDPJabndiE_k3ucd4sYzQSMYOBbA2r4zHcBCW2e23A/viewform?embedded=true"
-      width="100%"
-      height="1500"
-      frameBorder="0"
-      marginHeight={0}
-      marginWidth={0}
-      title="Booze N’ Brews Quote Form"
-      className="w-full rounded-xl"
-      style={{ border: 'none' }}
+    <select name="Package" className="form-input">
+      <option value="">Choose your Package</option>
+      <option value="Basic Package">Basic Package</option>
+      <option value="Deluxe Package">Deluxe Package</option>
+    </select>
+
+    <select name="Service Type" className="form-input">
+      <option value="">Choose your Service</option>
+      <option value="Complete Bar Service">Complete Bar Service (Recommended)</option>
+      <option value="Bartender Only">Bartender Only</option>
+    </select>
+
+    <select name="Preferred Mode of Contact" className="form-input md:col-span-2">
+      <option value="">Preferred Mode of Contact</option>
+      <option value="Email Only">Email only</option>
+      <option value="Virtual Meeting">Virtual Meeting</option>
+      <option value="Email and Phone Call">Email and Phone Call</option>
+    </select>
+
+    <textarea
+      name="Special Requests"
+      placeholder="Any extras or special requests? (e.g., theme, cocktails, kids)"
+      className="form-input md:col-span-2"
+      rows={4}
+    ></textarea>
+
+    <div className="md:col-span-2 text-center">
+      <button
+        type="submit"
+        className="bg-[#f7843b] hover:bg-[#e87428] text-white font-medium rounded-full px-8 py-3 text-lg font-poppins transition"
+      >
+        Get My Quote
+      </button>
+    </div>
+  </form>
+
+  <p className="text-center mt-8 font-poppins text-gray-700">
+    Need a quote ASAP? We accept rush events.
+  </p>
+  <div className="text-center mt-2">
+    <a
+      href="tel:+112345678910"
+      className="inline-block bg-white text-[#f7843b] border border-[#f7843b] px-6 py-2 rounded-full font-poppins hover:bg-[#f7843b] hover:text-white transition"
     >
-      Loading…
-    </iframe>
+      📞 Call Us Today
+    </a>
   </div>
 </section>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Call Us Today CTA */}
-      <section style={{ 
-        backgroundColor: '#f1ebdf', 
-        paddingTop: '2rem', 
-        textAlign: 'center' 
-      }}>
-        <p style={{ 
-          fontFamily: "'Poppins', sans-serif", 
-          fontSize: '1rem', 
-          color: '#333' 
-        }}>
-          Need a quote ASAP? We accept rush events.
-        </p>
-        <a 
-          href="tel:+112345678910" 
-          style={{ 
-            backgroundColor: '#f7843b', 
-            color: 'white', 
-            padding: '0.75rem 1.5rem', 
-            fontFamily: "'Poppins', sans-serif", 
-            borderRadius: '999px', 
-            textDecoration: 'none', 
-            display: 'inline-block', 
-            marginTop: '0.5rem' 
-          }}
-        >
-          📞 Call Us Today
-        </a>
-      </section>
-    </>
-  );
-};
-
-export default BookingSection;
