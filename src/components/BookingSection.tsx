@@ -45,12 +45,12 @@ const BookingSection = () => {
       }}
     >
       <div style={{ 
-        maxWidth: '800px', 
+        maxWidth: '880px', 
         margin: '0 auto', 
         background: 'white', 
-        padding: '2rem 2rem 3rem', 
-        borderRadius: '1.5rem', 
-        boxShadow: '0 8px 24px rgba(0,0,0,0.08)' 
+        padding: '2.5rem 2rem 3rem', 
+        borderRadius: '24px', 
+        boxShadow: '0 10px 28px rgba(0,0,0,0.07)' 
       }}>
         <h2 style={{ 
           textAlign: 'center', 
@@ -63,7 +63,7 @@ const BookingSection = () => {
         </h2>
         <h3 style={{ 
           textAlign: 'center', 
-          fontFamily: "'Allura', cursive", 
+          fontFamily: "'Barista Script', cursive", 
           fontSize: '2rem', 
           color: '#f7843b', 
           marginTop: '0' 
@@ -79,21 +79,47 @@ const BookingSection = () => {
         }}>
           Tell us a few details and we'll get back to you with a custom quote.
         </p>
+        <div style={{ height: '900px', overflow: 'auto' }}>
+          <iframe 
+            data-tally-src="https://tally.so/embed/m6zve5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy" 
+            width="100%" 
+            height="1000" 
+            frameBorder="0" 
+            marginHeight={0} 
+            marginWidth={0}
+            title="Request a Quote" 
+            style={{ 
+              border: 'none', 
+              borderRadius: '16px' 
+            }}
+          />
+        </div>
+      </div>
 
-        <iframe 
-          data-tally-src="https://tally.so/embed/m6zve5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy" 
-          width="100%" 
-          height="1922" 
-          frameBorder="0" 
-          marginHeight={0} 
-          marginWidth={0}
-          title="Request a Quote" 
+      {/* Call Us Button */}
+      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+        <p style={{ 
+          fontFamily: "'Poppins', sans-serif", 
+          fontSize: '1rem', 
+          color: '#333' 
+        }}>
+          Need a quote ASAP? We accept rush events.
+        </p>
+        <a 
+          href="tel:+112345678910" 
           style={{ 
-            border: 'none', 
-            borderRadius: '12px' 
+            backgroundColor: '#f7843b', 
+            color: 'white', 
+            padding: '0.75rem 1.5rem', 
+            fontFamily: "'Poppins', sans-serif", 
+            borderRadius: '999px', 
+            textDecoration: 'none', 
+            display: 'inline-block' 
           }}
-        />
+        >
+          📞 Call Us Today
+        </a>
       </div>
     </section>
   );
