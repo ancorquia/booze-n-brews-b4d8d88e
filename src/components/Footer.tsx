@@ -53,7 +53,7 @@ const Footer = () => {
                 </a>
                 <a 
                   href="https://www.facebook.com/boozenbrewsinc" target="_blank" rel="noopener noreferrer"
-                  className="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition-colors"
+                  className="bg-[#1877F3] hover:bg-[#166fe0] p-3 rounded-full transition-colors text-white"
                   aria-label="Like us on Facebook"
                 >
                 <svg
