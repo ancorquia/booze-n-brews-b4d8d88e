@@ -40,55 +40,54 @@ const BookingSection = () => {
       return;
     }
 
-  try {
-    const response = await fetch("https://hook.us2.make.com/963t3wvovkthwsdtffys8dzl5fve74qq", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
+try {
+  const response = await fetch("https://hook.us2.make.com/963t3wvovkthwsdtffys8dzl5fve74qq", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData)
+  });
+
+  // Don't use await response.json(); for Make.com webhooks!
+  if (response.ok) {
+    toast({
+      title: "Quote request submitted!",
+      description: "We'll get back to you within 24 hours with a custom quote.",
     });
 
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      eventDate: "",
+      eventLocation: "",
+      guestCount: "",
+      eventType: "",
+      eventTimeStart: "",
+      eventDuration: "",
+      venueType: "",
+      package: "",
+      serviceType: "",
+      contactPreference: "",
+      additionalDetails: ""
+    });
+  } else {
+    // Try to show text, fallback to a generic error
+    const errorText = await response.text();
+    toast({
+      title: "Submission failed",
+      description: errorText || "Something went wrong. Please try again.",
+      variant: "destructive"
+    });
+  }
+} catch (error) {
+  console.error("Error submitting form:", error);
+  toast({
+    title: "Submission failed",
+    description: "Something went wrong. Please try again.",
+    variant: "destructive"
+  });
+}
 
-
-      const result = await response.json();
-
-      if (response.ok) {
-        toast({
-          title: "Quote request submitted!",
-          description: result.message || "We'll get back to you within 24 hours with a custom quote.",
-        });
-
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-          eventDate: "",
-          eventLocation: "",
-          guestCount: "",
-          eventType: "",
-          eventTimeStart: "",
-          eventDuration: "",
-          venueType: "",
-          package: "",
-          serviceType: "",
-          contactPreference: "",
-          additionalDetails: ""
-        });
-      } else {
-        toast({
-          title: "Submission failed",
-          description: result.message || "Something went wrong. Please try again.",
-          variant: "destructive"
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Submission failed",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive"
-      });
-    }
-  };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
