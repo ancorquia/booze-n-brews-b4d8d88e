@@ -40,12 +40,12 @@ const BookingSection = () => {
       return;
     }
 
-    try {
-     const response = await fetch("/api/submit-quote", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(formData)
-});
+  try {
+    const response = await fetch("https://hook.us2.make.com/963t3wvovkthwsdtffys8dzl5fve74qq", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
 
 
 
