@@ -10,7 +10,7 @@ const PackagesSection = () => {
       emoji: "🎉",
       price: "Starting at $600",
       guestCount: "Up to 30 Guests",
-      description: "Perfect for birthdays and intimate celebrations",
+      description: "Perfect for birthdays, engagements, retirements, showers, and private backyard events.",
       includes: [
         "1 Bartender",
         "4 Hours of Service + 2 Hours Setup/Tear Down",
@@ -33,7 +33,7 @@ const PackagesSection = () => {
       emoji: "🥂",
       price: "Starting at $1,250",
       guestCount: "Up to 50 Guests",
-      description: "Ideal for corporate events and professional gatherings",
+      description: "Tailored for corporate mixers, product launches, staff parties, and networking events.",
       includes: [
         "1 Bartender",
         "5 Hours of Service + 2 Hours Setup/Tear Down",
@@ -50,14 +50,14 @@ const PackagesSection = () => {
         "+$2/km travel beyond 30km"
       ],
       note: "Corporate events often need flexibility and branding — our per-guest rate reflects the added preparation and custom design we put into your event.",
-      popular: true
+      popular: false
     },
     {
       name: "The Ever After Package",
       emoji: "💍",
       price: "Starting at $1,750",
       guestCount: "Up to 70 Guests",
-      description: "Designed for weddings and milestone celebrations",
+      description: "Designed for weddings, anniversaries, formal celebrations, and milestone moments.",
       includes: [
         "2 Bartenders included (for smooth service up to 70 guests)",
         "6 Hours of Service + 2 Hours Setup/Tear Down",
@@ -80,7 +80,7 @@ const PackagesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-brand-milk">
+    <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -101,16 +101,8 @@ const PackagesSection = () => {
             {packages.map((pkg, index) => (
               <Card 
                 key={index} 
-                className={`relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white ${
-                  pkg.popular ? 'ring-2 ring-brand-orange shadow-xl scale-105' : 'shadow-lg'
-                }`}
+                className="relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white shadow-lg"
               >
-                {pkg.popular && (
-                  <div className="absolute top-0 right-0 bg-brand-orange text-white px-4 py-2 text-sm font-poppins font-medium rounded-bl-lg">
-                    Most Popular
-                  </div>
-                )}
-                
                 <CardHeader className="text-center pb-6">
                   <div className="text-5xl mb-4">
                     {pkg.emoji}
@@ -126,7 +118,7 @@ const PackagesSection = () => {
                       {pkg.guestCount}
                     </div>
                   </div>
-                  <p className="font-poppins text-sm text-gray-600 italic">
+                  <p className="font-poppins text-sm font-semibold italic" style={{ color: '#525b46' }}>
                     {pkg.description}
                   </p>
                 </CardHeader>
@@ -170,11 +162,7 @@ const PackagesSection = () => {
                   </div>
                   
                   <Button 
-                    className={`w-full font-poppins font-medium ${
-                      pkg.popular 
-                        ? 'bg-brand-orange hover:bg-brand-orange/90 text-white' 
-                        : 'bg-white hover:bg-gray-50 text-gray-900 border-2 border-brand-orange hover:bg-brand-orange hover:text-white'
-                    } transition-all duration-300`}
+                    className="w-full font-poppins font-medium bg-white hover:bg-gray-50 text-gray-900 border-2 border-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300"
                   >
                     Get Quote for {pkg.name}
                   </Button>
