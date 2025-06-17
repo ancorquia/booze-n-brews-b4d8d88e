@@ -284,14 +284,7 @@ const PackagesSection = () => {
             )}
           </div>
 
-          {/* Bartender-Only Inquiry Note */}
-          <div className="text-center mb-8">
-            <div className="max-w-2xl mx-auto p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm">
-              <p className="font-poppins italic text-gray-700 text-lg">
-                Just need a bartender without the full setup? Ask us about our Bartender-Only service starting at $250.
-              </p>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
