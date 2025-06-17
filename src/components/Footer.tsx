@@ -31,21 +31,21 @@ const Footer = () => {
               </p>
               <div className="flex gap-4">
                 <a 
-                  href="https://instagram.com/boozenbrews" target="_blank" rel="noopener noreferrer"
+                  href="https://www.instagram.com/boozenbrews_/" target="_blank" rel="noopener noreferrer"
                   className="bg-brand-orange hover:bg-brand-orange/80 p-3 rounded-full transition-colors"
                   aria-label="Follow us on Instagram"
                 >
                   <Instagram size={20} />
                 </a>
                 <a 
-                  href="mailto:hello@boozenbrews.ca" 
+                  href="mailto:booking@boozenbrews.ca" 
                   className="bg-brand-orchid hover:bg-brand-orchid/80 p-3 rounded-full transition-colors text-gray-700"
                   aria-label="Email us"
                 >
                   <Mail size={20} />
                 </a>
                 <a 
-                  href="tel:+1-403-555-0123" 
+                  href="tel:+1-226-698-1155" 
                   className="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition-colors"
                   aria-label="Call us"
                 >
