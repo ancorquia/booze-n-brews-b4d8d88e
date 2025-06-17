@@ -17,7 +17,7 @@ const AboutSection = () => {
               </h2>
               
               <p className="font-poppins text-lg text-gray-700 mb-8 leading-relaxed">
-                We're <span className="font-medium text-brand-orange">Andrea and Dannison</span> – a passionate mobile bartending duo serving cocktails, coffee, and unforgettable vibes across Calgary and beyond.
+                We're <span className="font-medium text-brand-orange">Andrea and Dannison</span> – a passionate mobile bartending duo serving cocktails and unforgettable vibes across Calgary and beyond.
               </p>
               
               <div className="space-y-4">
