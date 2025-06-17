@@ -1,5 +1,5 @@
 
-import { Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, Facebook } from "lucide-react";
 
 const Footer = () => {
   const quickLinks = [
@@ -52,21 +52,13 @@ const Footer = () => {
                   <Phone size={20} />
                 </a>
                 <a 
-                  href="https://www.facebook.com/boozenbrewsinc" target="_blank" rel="noopener noreferrer"
-                  className="bg-[#1877F3] hover:bg-[#166fe0] p-3 rounded-full transition-colors text-white"
-                  aria-label="Like us on Facebook"
-                >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={20}
-                  height={20}
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M22.675 0h-21.35C.597 0 0 .6 0 1.326v21.348C0 23.4.597 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.92.001c-1.504 0-1.797.715-1.797 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.326-.6 1.326-1.326V1.326C24 .6 23.405 0 22.675 0"/>
-                </svg>
-                </a>
+  href="https://www.facebook.com/boozenbrewsinc" target="_blank" rel="noopener noreferrer"
+  className="bg-brand-orange hover:bg-brand-orange/80 p-3 rounded-full transition-colors"
+  aria-label="Like us on Facebook"
+>
+  <Facebook size={20} />
+</a>
+
               </div>
             </div>
 
