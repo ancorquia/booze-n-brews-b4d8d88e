@@ -1,26 +1,25 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 
 const TestimonialSection = () => {
   const testimonials = [
     {
-      name: "Sarah & Mike",
-      event: "Wedding Reception",
+      name: "Client Feedback",
+      event: "Engagement Party",
       rating: 5,
-      text: "Andrea and Dannison made our wedding absolutely perfect! Their cocktails were incredible and they kept the energy up all night. Our guests are still talking about the amazing drinks!"
+      text: "Booze N’ Brews brought the magic to our engagement party! The cocktails were creative, the setup was beautiful, and the bartenders were an absolute vibe. Our guests kept going back for refills and compliments were nonstop. The whole service elevated the night in the best way possible."
     },
     {
-      name: "Jennifer L.",
+      name: "Client Feedback",
       event: "Corporate Event",
       rating: 5,
-      text: "Professional, creative, and so much fun! They transformed our company party into something really special. The custom cocktail menu was a huge hit with everyone."
+      text: "We hired Booze N’ Brews for a corporate appreciation night and they truly delivered. The team was professional, efficient, and incredibly easy to work with. The mobile bar was a showstopper and the drink menu had something for everyone — even our non-drinking guests were impressed."
     },
     {
-      name: "David & Emma",
-      event: "Anniversary Party",
+      name: "Client Feedback",
+      event: "Birthday Party",
       rating: 5,
-      text: "From start to finish, the experience was flawless. They listened to our vision and brought it to life perfectly. We couldn't have asked for better service!"
+      text: "Everything was seamless. From arrival to last call, Booze N’ Brews handled our birthday celebration with class and personality. The bar setup looked amazing, the drinks were delicious, and the bartenders kept the energy flowing all night. We’ll absolutely be booking again!"
     }
   ];
 
