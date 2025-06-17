@@ -62,13 +62,13 @@ const TestimonialSection = () => {
                     "{testimonial.text}"
                   </p>
                   
-                  {/* Client Info */}
+                  {/* Event Info + Label */}
                   <div>
-                    <div className="font-poppins font-medium text-gray-900">
-                      {testimonial.name}
-                    </div>
-                    <div className="font-poppins text-sm text-brand-orange">
+                    <div className="font-poppins font-semibold text-base text-brand-orange">
                       {testimonial.event}
+                    </div>
+                    <div className="font-poppins text-sm text-gray-500">
+                      {testimonial.name}
                     </div>
                   </div>
                 </CardContent>
