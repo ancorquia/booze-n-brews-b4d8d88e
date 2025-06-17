@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -29,7 +30,6 @@ const BookingSection = () => {
     eventDuration: "",
     venueType: "",
     package: "",
-    serviceType: "",
     contactPreference: "",
     additionalDetails: "",
   });
@@ -81,7 +81,6 @@ const BookingSection = () => {
           eventDuration: "",
           venueType: "",
           package: "",
-          serviceType: "",
           contactPreference: "",
           additionalDetails: "",
         });
@@ -248,6 +247,7 @@ const BookingSection = () => {
                   onChange={(e) =>
                     handleInputChange("eventLocation", e.target.value)
                   }
+                  placeholder="Please enter full address or specific location details"
                   required
                 />
               </div>
@@ -287,6 +287,11 @@ const BookingSection = () => {
                   <SelectItem value="corporate">Corporate</SelectItem>
                   <SelectItem value="private">Private Party</SelectItem>
                   <SelectItem value="birthday">Birthday Party</SelectItem>
+                  <SelectItem value="engagement">Engagement Party</SelectItem>
+                  <SelectItem value="retirement">Retirement Party</SelectItem>
+                  <SelectItem value="showers">Showers</SelectItem>
+                  <SelectItem value="networking">Networking Events</SelectItem>
+                  <SelectItem value="open-house">Open House</SelectItem>
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
@@ -338,28 +343,9 @@ const BookingSection = () => {
                   <SelectValue placeholder="Select a package" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="basic">Basic Package</SelectItem>
-                  <SelectItem value="deluxe">Deluxe Package</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <Label className="font-poppins font-medium text-gray-900">
-                Choose Your Service
-              </Label>
-              <Select
-                value={formData.serviceType}
-                onValueChange={(value) => handleInputChange("serviceType", value)}
-              >
-                <SelectTrigger className="font-poppins">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="complete">
-                    Complete Bar Service (Recommended)
-                  </SelectItem>
-                  <SelectItem value="bartender">Bartender Only</SelectItem>
+                  <SelectItem value="cheers">🎉 The Cheers Package (Birthday / Private Events)</SelectItem>
+                  <SelectItem value="mix-mingle">🥂 The Mix & Mingle (Corporate / Brand Events)</SelectItem>
+                  <SelectItem value="ever-after">💍 The Ever After Package (Weddings / Formal Celebrations)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -378,9 +364,11 @@ const BookingSection = () => {
                   <SelectValue placeholder="Select contact mode" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="email">Email Only</SelectItem>
+                  <SelectItem value="email">Email</SelectItem>
+                  <SelectItem value="phone">Phone (Call or Text)</SelectItem>
                   <SelectItem value="virtual">Virtual Meeting</SelectItem>
-                  <SelectItem value="email-phone">Email and Phone Call</SelectItem>
+                  <SelectItem value="email-virtual">Email and Virtual Meeting</SelectItem>
+                  <SelectItem value="no-preference">No Preference</SelectItem>
                 </SelectContent>
               </Select>
             </div>
