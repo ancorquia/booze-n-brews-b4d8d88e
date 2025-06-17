@@ -1,9 +1,12 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Plus } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Check, Plus, ChevronDown } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const PackagesSection = () => {
+  const isMobile = useIsMobile();
+
   const packages = [
     {
       name: "The Cheers Package",
@@ -26,7 +29,8 @@ const PackagesSection = () => {
         "+$2/km travel beyond 30km"
       ],
       note: "We keep per-guest pricing affordable for birthdays and private events while still covering everything you need — from the garnish to the last straw.",
-      popular: false
+      popular: false,
+      miniHighlight: "Includes 1 Bartender + 2 Signature Cocktails"
     },
     {
       name: "The Mix & Mingle",
@@ -50,7 +54,8 @@ const PackagesSection = () => {
         "+$2/km travel beyond 30km"
       ],
       note: "Corporate events often need flexibility and branding — our per-guest rate reflects the added preparation and custom design we put into your event.",
-      popular: false
+      popular: false,
+      miniHighlight: "Includes Branded Menus + Mobile Bar Setup"
     },
     {
       name: "The Ever After Package",
@@ -75,9 +80,179 @@ const PackagesSection = () => {
         "+$2/km travel beyond 30km"
       ],
       note: "Weddings require personalization, coordination, and extra hands — our per-guest fee includes full menu customization, styled decor, and a second bartender to keep the experience seamless.",
-      popular: false
+      popular: false,
+      miniHighlight: "Includes 2 Bartenders + Custom Cocktail Naming"
     }
   ];
+
+  const scrollToBooking = () => {
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const MobilePackageCard = ({ pkg, index }: { pkg: any; index: number }) => (
+    <Card className="overflow-hidden bg-white shadow-lg">
+      <Collapsible>
+        <CardHeader className="pb-4">
+          <div className="text-center mb-4">
+            <div className="text-4xl mb-2">{pkg.emoji}</div>
+            <CardTitle className="font-poppins font-medium text-xl text-gray-900 mb-2">
+              {pkg.name}
+            </CardTitle>
+            <div className="mb-3">
+              <div className="font-poppins font-semibold text-2xl text-brand-orange mb-1">
+                {pkg.price}
+              </div>
+              <div className="font-poppins text-base font-medium" style={{ color: '#525b46' }}>
+                {pkg.guestCount}
+              </div>
+            </div>
+            <p className="font-poppins text-sm font-semibold italic mb-3" style={{ color: '#525b46' }}>
+              {pkg.description}
+            </p>
+            <p className="font-poppins text-sm text-gray-600 bg-gray-50 p-2 rounded">
+              {pkg.miniHighlight}
+            </p>
+          </div>
+          
+          <CollapsibleTrigger asChild>
+            <Button 
+              variant="outline" 
+              className="w-full font-poppins font-medium border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              View Full Details
+              <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+            </Button>
+          </CollapsibleTrigger>
+        </CardHeader>
+
+        <CollapsibleContent>
+          <CardContent className="px-6 pb-6">
+            {/* Includes Section */}
+            <div className="mb-6">
+              <h4 className="font-poppins font-medium text-lg text-gray-900 mb-3">
+                Includes:
+              </h4>
+              <ul className="space-y-2">
+                {pkg.includes.map((feature: string, featureIndex: number) => (
+                  <li key={featureIndex} className="flex items-start gap-3">
+                    <Check size={16} className="text-brand-orange flex-shrink-0 mt-0.5" />
+                    <span className="font-poppins text-sm text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Add-ons Section */}
+            <div className="mb-6">
+              <h4 className="font-poppins font-medium text-lg text-gray-900 mb-3">
+                Add-ons:
+              </h4>
+              <ul className="space-y-2">
+                {pkg.addons.map((addon: string, addonIndex: number) => (
+                  <li key={addonIndex} className="flex items-start gap-3">
+                    <Plus size={16} className="flex-shrink-0 mt-0.5" style={{ color: '#525b46' }} />
+                    <span className="font-poppins text-sm text-gray-700">{addon}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Value Note */}
+            <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+              <p className="font-poppins text-sm text-gray-600 italic leading-relaxed">
+                💡 {pkg.note}
+              </p>
+            </div>
+          </CardContent>
+        </CollapsibleContent>
+
+        <CardContent className="px-6 pb-6 pt-0">
+          <Button 
+            onClick={scrollToBooking}
+            className="w-full font-poppins font-medium bg-brand-orange hover:bg-brand-orange/90 text-white transition-all duration-300 py-3 rounded-lg shadow-md hover:shadow-lg"
+          >
+            Customize & Book This Package
+          </Button>
+        </CardContent>
+      </Collapsible>
+    </Card>
+  );
+
+  const DesktopPackageCard = ({ pkg, index }: { pkg: any; index: number }) => (
+    <Card className="relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white shadow-lg">
+      <CardHeader className="text-center pb-6">
+        <div className="text-5xl mb-4">
+          {pkg.emoji}
+        </div>
+        <CardTitle className="font-poppins font-medium text-2xl text-gray-900 mb-2">
+          {pkg.name}
+        </CardTitle>
+        <div className="text-center mb-3">
+          <div className="font-poppins font-semibold text-3xl text-brand-orange mb-1">
+            {pkg.price}
+          </div>
+          <div className="font-poppins text-lg font-medium" style={{ color: '#525b46' }}>
+            {pkg.guestCount}
+          </div>
+        </div>
+        <p className="font-poppins text-sm font-semibold italic" style={{ color: '#525b46' }}>
+          {pkg.description}
+        </p>
+      </CardHeader>
+      
+      <CardContent className="px-6 pb-6">
+        {/* Includes Section */}
+        <div className="mb-6">
+          <h4 className="font-poppins font-medium text-lg text-gray-900 mb-3">
+            Includes:
+          </h4>
+          <ul className="space-y-2">
+            {pkg.includes.map((feature: string, featureIndex: number) => (
+              <li key={featureIndex} className="flex items-start gap-3">
+                <Check size={16} className="text-brand-orange flex-shrink-0 mt-0.5" />
+                <span className="font-poppins text-sm text-gray-700">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Add-ons Section */}
+        <div className="mb-6">
+          <h4 className="font-poppins font-medium text-lg text-gray-900 mb-3">
+            Add-ons:
+          </h4>
+          <ul className="space-y-2">
+            {pkg.addons.map((addon: string, addonIndex: number) => (
+              <li key={addonIndex} className="flex items-start gap-3">
+                <Plus size={16} className="flex-shrink-0 mt-0.5" style={{ color: '#525b46' }} />
+                <span className="font-poppins text-sm text-gray-700">{addon}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Value Note */}
+        <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+          <p className="font-poppins text-sm text-gray-600 italic leading-relaxed">
+            💡 {pkg.note}
+          </p>
+        </div>
+        
+        <Button 
+          onClick={scrollToBooking}
+          className="w-full font-poppins font-medium bg-brand-orange hover:bg-brand-orange/90 text-white transition-all duration-300 py-3 rounded-lg shadow-md hover:shadow-lg"
+        >
+          Customize & Book This Package
+        </Button>
+      </CardContent>
+    </Card>
+  );
 
   return (
     <section id="services" className="py-20 bg-white">
@@ -98,77 +273,13 @@ const PackagesSection = () => {
 
           {/* Package Cards */}
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-            {packages.map((pkg, index) => (
-              <Card 
-                key={index} 
-                className="relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 bg-white shadow-lg"
-              >
-                <CardHeader className="text-center pb-6">
-                  <div className="text-5xl mb-4">
-                    {pkg.emoji}
-                  </div>
-                  <CardTitle className="font-poppins font-medium text-2xl text-gray-900 mb-2">
-                    {pkg.name}
-                  </CardTitle>
-                  <div className="text-center mb-3">
-                    <div className="font-poppins font-semibold text-3xl text-brand-orange mb-1">
-                      {pkg.price}
-                    </div>
-                    <div className="font-poppins text-lg font-medium" style={{ color: '#525b46' }}>
-                      {pkg.guestCount}
-                    </div>
-                  </div>
-                  <p className="font-poppins text-sm font-semibold italic" style={{ color: '#525b46' }}>
-                    {pkg.description}
-                  </p>
-                </CardHeader>
-                
-                <CardContent className="px-6 pb-6">
-                  {/* Includes Section */}
-                  <div className="mb-6">
-                    <h4 className="font-poppins font-medium text-lg text-gray-900 mb-3">
-                      Includes:
-                    </h4>
-                    <ul className="space-y-2">
-                      {pkg.includes.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-3">
-                          <Check size={16} className="text-brand-orange flex-shrink-0 mt-0.5" />
-                          <span className="font-poppins text-sm text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Add-ons Section */}
-                  <div className="mb-6">
-                    <h4 className="font-poppins font-medium text-lg text-gray-900 mb-3">
-                      Add-ons:
-                    </h4>
-                    <ul className="space-y-2">
-                      {pkg.addons.map((addon, addonIndex) => (
-                        <li key={addonIndex} className="flex items-start gap-3">
-                          <Plus size={16} className="flex-shrink-0 mt-0.5" style={{ color: '#525b46' }} />
-                          <span className="font-poppins text-sm text-gray-700">{addon}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Value Note */}
-                  <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                    <p className="font-poppins text-sm text-gray-600 italic leading-relaxed">
-                      💡 {pkg.note}
-                    </p>
-                  </div>
-                  
-                  <Button 
-                    className="w-full font-poppins font-medium bg-white hover:bg-gray-50 text-gray-900 border-2 border-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-300"
-                  >
-                    Get Quote for {pkg.name}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {packages.map((pkg, index) => 
+              isMobile ? (
+                <MobilePackageCard key={index} pkg={pkg} index={index} />
+              ) : (
+                <DesktopPackageCard key={index} pkg={pkg} index={index} />
+              )
+            )}
           </div>
         </div>
       </div>
