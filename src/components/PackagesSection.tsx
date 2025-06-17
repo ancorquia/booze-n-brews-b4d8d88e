@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -26,6 +27,7 @@ const PackagesSection = () => {
         "+$75 per custom cocktail",
         "+$125/hr extra service hour",
         "+$50/hr per additional bartender",
+        "+$100 Satellite Bar",
         "+$2/km travel beyond 30km"
       ],
       note: "We keep per-guest pricing affordable for birthdays and private events while still covering everything you need — from the garnish to the last straw.",
@@ -272,7 +274,7 @@ const PackagesSection = () => {
           </div>
 
           {/* Package Cards */}
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-12">
             {packages.map((pkg, index) => 
               isMobile ? (
                 <MobilePackageCard key={index} pkg={pkg} index={index} />
@@ -280,6 +282,15 @@ const PackagesSection = () => {
                 <DesktopPackageCard key={index} pkg={pkg} index={index} />
               )
             )}
+          </div>
+
+          {/* Bartender-Only Inquiry Note */}
+          <div className="text-center mb-8">
+            <div className="max-w-2xl mx-auto p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm">
+              <p className="font-poppins italic text-gray-700 text-lg">
+                Just need a bartender without the full setup? Ask us about our Bartender-Only service starting at $250.
+              </p>
+            </div>
           </div>
         </div>
       </div>

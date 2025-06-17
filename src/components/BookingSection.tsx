@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -32,6 +33,8 @@ const BookingSection = () => {
     package: "",
     contactPreference: "",
     additionalDetails: "",
+    bartenderOnly: false,
+    satelliteBar: false,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,6 +86,8 @@ const BookingSection = () => {
           package: "",
           contactPreference: "",
           additionalDetails: "",
+          bartenderOnly: false,
+          satelliteBar: false,
         });
       } else {
         // Try to show text, fallback to a generic error
@@ -104,7 +109,7 @@ const BookingSection = () => {
   };
 
   // Fix: This was previously nested! Must be top-level.
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -348,6 +353,43 @@ const BookingSection = () => {
                   <SelectItem value="ever-after">💍 The Ever After Package (Weddings / Formal Celebrations)</SelectItem>
                 </SelectContent>
               </Select>
+            </div>
+
+            {/* Bartender-Only Checkbox */}
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="bartenderOnly"
+                  checked={formData.bartenderOnly}
+                  onCheckedChange={(checked) => handleInputChange("bartenderOnly", !!checked)}
+                />
+                <Label
+                  htmlFor="bartenderOnly"
+                  className="font-poppins font-medium text-gray-900"
+                >
+                  I only need a bartender (no full bar setup)
+                </Label>
+              </div>
+              <p className="text-sm text-gray-600 font-poppins ml-6">
+                This lets us offer a simplified quote starting at $250 (tools and cups included, no styling or decor).
+              </p>
+            </div>
+
+            {/* Satellite Bar Add-on */}
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  id="satelliteBar"
+                  checked={formData.satelliteBar}
+                  onCheckedChange={(checked) => handleInputChange("satelliteBar", !!checked)}
+                />
+                <Label
+                  htmlFor="satelliteBar"
+                  className="font-poppins font-medium text-gray-900"
+                >
+                  Satellite Bar – Add our mobile bar setup to your event (+$100)
+                </Label>
+              </div>
             </div>
 
             <div className="space-y-2">
