@@ -120,6 +120,9 @@ const BookingSection = () => {
                                  formData.package === "mix-mingle" || 
                                  formData.package === "ever-after";
 
+  // Check if Satellite Bar should be shown (only for Cheers Package)
+  const shouldShowSatelliteBar = formData.package === "cheers";
+
   return (
     <section id="booking" className="py-24" style={{ backgroundColor: "#f1ebdf" }}>
       <div className="container mx-auto px-6">
@@ -382,22 +385,24 @@ const BookingSection = () => {
               </div>
             )}
 
-            {/* Satellite Bar Add-on */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="satelliteBar"
-                  checked={formData.satelliteBar}
-                  onCheckedChange={(checked) => handleInputChange("satelliteBar", !!checked)}
-                />
-                <Label
-                  htmlFor="satelliteBar"
-                  className="font-poppins font-medium text-gray-900"
-                >
-                  Satellite Bar – Add our mobile bar setup to your event (+$100)
-                </Label>
+            {/* Satellite Bar Add-on - Only show for Cheers Package */}
+            {shouldShowSatelliteBar && (
+              <div className="space-y-3">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="satelliteBar"
+                    checked={formData.satelliteBar}
+                    onCheckedChange={(checked) => handleInputChange("satelliteBar", !!checked)}
+                  />
+                  <Label
+                    htmlFor="satelliteBar"
+                    className="font-poppins font-medium text-gray-900"
+                  >
+                    Satellite Bar – Add our mobile bar setup to your event (+$100)
+                  </Label>
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="space-y-2">
               <Label className="font-poppins font-medium text-gray-900">
