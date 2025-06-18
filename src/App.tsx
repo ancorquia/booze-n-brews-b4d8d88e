@@ -20,7 +20,7 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-  // Add smooth scrolling styles
+  // Add smooth scrolling styles and handle hash-based navigation on page load
   React.useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
@@ -29,6 +29,15 @@ const App = () => {
       }
     `;
     document.head.appendChild(style);
+    
+    // Handle hash-based navigation on page load
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 300);
+      }
+    }
     
     return () => {
       document.head.removeChild(style);
