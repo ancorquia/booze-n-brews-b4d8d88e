@@ -116,6 +116,11 @@ const BookingSection = () => {
     }));
   };
 
+  // Check if a main package is selected to conditionally show bartender-only option
+  const isMainPackageSelected = formData.package === "cheers" || 
+                                 formData.package === "mix-mingle" || 
+                                 formData.package === "ever-after";
+
   return (
     <section id="booking" className="py-24" style={{ backgroundColor: "#f1ebdf" }}>
       <div className="container mx-auto px-6">
@@ -355,25 +360,27 @@ const BookingSection = () => {
               </Select>
             </div>
 
-            {/* Bartender-Only Checkbox */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="bartenderOnly"
-                  checked={formData.bartenderOnly}
-                  onCheckedChange={(checked) => handleInputChange("bartenderOnly", !!checked)}
-                />
-                <Label
-                  htmlFor="bartenderOnly"
-                  className="font-poppins font-medium text-gray-900"
-                >
-                  I only need a bartender (no full bar setup)
-                </Label>
+            {/* Bartender-Only Checkbox - Only show if no main package is selected */}
+            {!isMainPackageSelected && (
+              <div className="space-y-3">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="bartenderOnly"
+                    checked={formData.bartenderOnly}
+                    onCheckedChange={(checked) => handleInputChange("bartenderOnly", !!checked)}
+                  />
+                  <Label
+                    htmlFor="bartenderOnly"
+                    className="font-poppins font-medium text-gray-900"
+                  >
+                    I only need a bartender (no full bar setup)
+                  </Label>
+                </div>
+                <p className="text-sm text-gray-600 font-poppins ml-6">
+                  This lets us offer a simplified quote with a minimum 4 hours of service (Bar tools included, no styling or decor).
+                </p>
               </div>
-              <p className="text-sm text-gray-600 font-poppins ml-6">
-                This lets us offer a simplified quote with a minimum 4 hours of service (Bar tools included, no styling or decor).
-              </p>
-            </div>
+            )}
 
             {/* Satellite Bar Add-on */}
             <div className="space-y-3">
