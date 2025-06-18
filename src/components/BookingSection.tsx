@@ -353,6 +353,7 @@ const BookingSection = () => {
                   <SelectValue placeholder="Select a package" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="">No Package Selected / Not Sure Yet</SelectItem>
                   <SelectItem value="cheers">🎉 The Cheers Package (Birthday / Private Events)</SelectItem>
                   <SelectItem value="mix-mingle">🥂 The Mix & Mingle (Corporate / Brand Events)</SelectItem>
                   <SelectItem value="ever-after">💍 The Ever After Package (Weddings / Formal Celebrations)</SelectItem>
