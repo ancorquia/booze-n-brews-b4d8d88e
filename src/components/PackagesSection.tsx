@@ -28,7 +28,7 @@ const PackagesSection = () => {
         "+$125/hr extra service hour",
         "+$50/hr per additional bartender",
         "+$100 Satellite Bar",
-        "+$2/km travel beyond 30km"
+        "+$2/km travel beyond Calgary"
       ],
       note: "We keep per-guest pricing affordable for birthdays and private events while still covering everything you need — from the garnish to the last straw.",
       popular: false,
@@ -43,7 +43,7 @@ const PackagesSection = () => {
       includes: [
         "1 Bartender",
         "5 Hours of Service + 2 Hours Setup/Tear Down",
-        "3 Signature Cocktails + Full Beverage Service",
+        "Up to 3 Signature Cocktails + Highballs, Wine & Beer",
         "Branded Drink Menus (Logo or Themed)",
         "Elegant Mobile Bar Setup + Lighting",
         "Ice, Garnishes, Mixers, Disposables"
@@ -53,7 +53,7 @@ const PackagesSection = () => {
         "+$75 per custom cocktail",
         "+$125/hr extra service hour",
         "+$50/hr per additional bartender",
-        "+$2/km travel beyond 30km"
+        "+$2/km travel beyond Calgary"
       ],
       note: "Corporate events often need flexibility and branding — our per-guest rate reflects the added preparation and custom design we put into your event.",
       popular: false,
@@ -68,7 +68,7 @@ const PackagesSection = () => {
       includes: [
         "2 Bartenders included (for smooth service up to 70 guests)",
         "6 Hours of Service + 2 Hours Setup/Tear Down",
-        "Up to 3 Signature Cocktails",
+        "Up to 3 Signature Cocktails + Highballs, Wine & Beer",
         "Custom Cocktail Naming & Printed Menus",
         "Themed Bar Styling & Champagne Toast Setup",
         "Ice, Garnishes, Mixers, Disposables"
@@ -79,7 +79,7 @@ const PackagesSection = () => {
         "+$125/hr extra service hour",
         "+$50/hr per additional bartender",
         "+$100 Satellite Bar",
-        "+$2/km travel beyond 30km"
+        "+$2/km travel beyond Calgary"
       ],
       note: "Weddings require personalization, coordination, and extra hands — our per-guest fee includes full menu customization, styled decor, and a second bartender to keep the experience seamless.",
       popular: false,
