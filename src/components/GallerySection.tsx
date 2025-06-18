@@ -8,8 +8,8 @@ const GallerySection = () => {
       alt: "Crafted cocktails with lime garnish"
     },
     {
-      src: "/lovable-uploads/118dc03e-4e65-49c4-a929-8976fd198165.png",
-      alt: "Signature cocktails with branded coasters"
+      src: "/lovable-uploads/48904e35-6d48-488d-a5f0-40ad47a50b7e.png",
+      alt: "Professional mobile bar setup"
     },
     {
       src: "/lovable-uploads/66f0b019-2789-4357-b2d7-b885b80a564e.png",
@@ -20,8 +20,8 @@ const GallerySection = () => {
       alt: "Premium spirits collection"
     },
     {
-      src: "/lovable-uploads/48904e35-6d48-488d-a5f0-40ad47a50b7e.png",
-      alt: "Professional mobile bar setup"
+      src: "/lovable-uploads/3a00232d-8161-43a5-9389-247f951c5b60.png",
+      alt: "Elegant Booze N' Brews experience"
     }
   ];
 
