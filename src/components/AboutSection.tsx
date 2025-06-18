@@ -46,20 +46,20 @@ const AboutSection = () => {
                     className="w-full h-48 object-cover rounded-2xl shadow-lg"
                   />
                   <img 
-                    src="/lovable-uploads/34122b98-0a16-4724-986b-fd2dad870a00.png" 
-                    alt="Premium spirits and cocktail setup"
+                    src="/lovable-uploads/36ffe763-8f18-4029-b044-33233b9a6824.png" 
+                    alt="Event guests enjoying cocktails"
                     className="w-full h-32 object-cover rounded-2xl shadow-lg"
                   />
                 </div>
                 <div className="space-y-4 pt-8">
                   <img 
-                    src="/lovable-uploads/36ffe763-8f18-4029-b044-33233b9a6824.png" 
-                    alt="Event guests enjoying cocktails"
+                    src="/lovable-uploads/66f0b019-2789-4357-b2d7-b885b80a564e.png" 
+                    alt="Professional bar setup with premium spirits"
                     className="w-full h-32 object-cover rounded-2xl shadow-lg"
                   />
                   <img 
-                    src="/lovable-uploads/66f0b019-2789-4357-b2d7-b885b80a564e.png" 
-                    alt="Professional bar setup with premium spirits"
+                    src="/lovable-uploads/3a00232d-8161-43a5-9389-247f951c5b60.png" 
+                    alt="Elegant Booze N' Brews experience"
                     className="w-full h-48 object-cover rounded-2xl shadow-lg"
                   />
                 </div>
