@@ -371,7 +371,7 @@ const BookingSection = () => {
                 </Label>
               </div>
               <p className="text-sm text-gray-600 font-poppins ml-6">
-                This lets us offer a simplified quote starting at $250 (Bar tools included, no styling or decor).
+                This lets us offer a simplified quote with a minimum 4 hours of service (Bar tools included, no styling or decor).
               </p>
             </div>
 
