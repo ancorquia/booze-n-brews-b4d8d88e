@@ -5,16 +5,9 @@ const Footer = () => {
   const quickLinks = [
     { name: "Services", href: "#services" },
     { name: "FAQ", href: "#faq" },
-    { name: "Custom Quote", href: "#cta" },
+    { name: "Custom Quote", href: "#customquote" },
     { name: "About Us", href: "#about" }
   ];
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer className="bg-gray-900 text-white py-16">
@@ -52,13 +45,12 @@ const Footer = () => {
                   <Phone size={20} />
                 </a>
                 <a 
-  href="https://www.facebook.com/boozenbrewsinc" target="_blank" rel="noopener noreferrer"
-  className="bg-brand-orange hover:bg-brand-orange/80 p-3 rounded-full transition-colors"
-  aria-label="Like us on Facebook"
->
-  <Facebook size={20} />
-</a>
-
+                  href="https://www.facebook.com/boozenbrewsinc" target="_blank" rel="noopener noreferrer"
+                  className="bg-brand-orange hover:bg-brand-orange/80 p-3 rounded-full transition-colors"
+                  aria-label="Like us on Facebook"
+                >
+                  <Facebook size={20} />
+                </a>
               </div>
             </div>
 
@@ -70,12 +62,12 @@ const Footer = () => {
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <button
-                      onClick={() => scrollToSection(link.href)}
-                      className="font-poppins text-gray-300 hover:text-brand-orange transition-colors text-left"
+                    <a
+                      href={link.href}
+                      className="font-poppins text-gray-300 hover:text-brand-orange transition-colors"
                     >
                       {link.name}
-                    </button>
+                    </a>
                   </li>
                 ))}
               </ul>
