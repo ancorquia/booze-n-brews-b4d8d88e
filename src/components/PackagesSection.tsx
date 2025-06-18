@@ -70,7 +70,7 @@ const PackagesSection = () => {
         "6 Hours of Service + 2 Hours Setup/Tear Down",
         "Up to 3 Signature Cocktails + Highballs, Wine & Beer",
         "Custom Cocktail Naming & Printed Menus",
-        "Themed Bar Styling & Champagne Toast Setup",
+        "Elegant Mobile Bar Setup + Themed Bar Styling ",
         "Ice, Garnishes, Mixers, Disposables"
       ],
       addons: [
@@ -78,7 +78,6 @@ const PackagesSection = () => {
         "+$75 per custom cocktail",
         "+$125/hr extra service hour",
         "+$50/hr per additional bartender",
-        "+$100 Satellite Bar",
         "+$2/km travel beyond Calgary"
       ],
       note: "Weddings require personalization, coordination, and extra hands — our per-guest fee includes full menu customization, styled decor, and a second bartender to keep the experience seamless.",
