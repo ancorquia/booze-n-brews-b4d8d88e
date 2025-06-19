@@ -76,7 +76,7 @@ const PackagesSection = () => {
       addons: [
         "Additional Guests: $12/guest over 70",
         "+$75 per custom cocktail",
-        "+$200/hr extra service hour",
+        "+$175/hr extra service hour",
         "+$50/hr per additional bartender",
         "+$2/km travel beyond Calgary"
       ],
