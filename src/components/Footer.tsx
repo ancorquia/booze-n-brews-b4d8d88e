@@ -45,7 +45,7 @@ const Footer = () => {
                 </a>
                 <a 
                   href="https://www.facebook.com/boozenbrewsinc" target="_blank" rel="noopener noreferrer"
-                  className="bg-brand-blue hover:bg-brand-orange/80 p-3 rounded-full transition-colors"
+                  className="bg-brand-orange hover:bg-brand-orange/80 p-3 rounded-full transition-colors"
                   aria-label="Like us on Facebook"
                 >
                   <Facebook size={20} />
