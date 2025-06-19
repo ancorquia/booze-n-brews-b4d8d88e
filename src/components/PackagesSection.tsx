@@ -12,7 +12,7 @@ const PackagesSection = () => {
     {
       name: "The Cheers Package",
       emoji: "🎉",
-      price: "Starting at $600",
+      price: "Starting at $800",
       guestCount: "Up to 30 Guests",
       description: "Perfect for birthdays, engagements, retirements, showers, and private backyard events.",
       includes: [
@@ -25,7 +25,7 @@ const PackagesSection = () => {
       addons: [
         "Additional Guests: $8/guest over 30",
         "+$75 per custom cocktail",
-        "+$125/hr extra service hour",
+        "+$100/hr extra service hour",
         "+$50/hr per additional bartender",
         "+$100 Satellite Bar",
         "+$2/km travel beyond Calgary"
@@ -45,7 +45,7 @@ const PackagesSection = () => {
         "5 Hours of Service + 2 Hours Setup/Tear Down",
         "Up to 3 Signature Cocktails + Highballs, Wine & Beer",
         "Branded Drink Menus (Logo or Themed)",
-        "Elegant Mobile Bar Setup + Lighting",
+        "Basic Mobile Bar Setup",
         "Ice, Garnishes, Mixers, Disposables"
       ],
       addons: [
@@ -76,7 +76,7 @@ const PackagesSection = () => {
       addons: [
         "Additional Guests: $12/guest over 70",
         "+$75 per custom cocktail",
-        "+$125/hr extra service hour",
+        "+$200/hr extra service hour",
         "+$50/hr per additional bartender",
         "+$2/km travel beyond Calgary"
       ],
