@@ -1,11 +1,10 @@
-
 import { Instagram, Mail, Phone, MapPin, Facebook } from "lucide-react";
 
 const Footer = () => {
   const quickLinks = [
     { name: "Services", href: "#services" },
     { name: "FAQ", href: "#faq" },
-    { name: "Custom Quote", href: "#customquote" },
+    { name: "Custom Quote", href: "#booking" },
     { name: "About Us", href: "#about" }
   ];
 
